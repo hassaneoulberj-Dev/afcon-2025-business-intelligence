@@ -1,0 +1,135 @@
+{
+  "csv": {
+    "league-2025-to-2025-stats.csv": {
+      "rows": 1,
+      "columns": 71,
+      "blank_names": 0,
+      "sha256": "576d57934756865774ccb0da9e62dc797f975358d5583c4921bdfe79ace30760"
+    },
+    "matches-2025-to-2025-stats.csv": {
+      "rows": 52,
+      "columns": 66,
+      "blank_names": 0,
+      "sha256": "d6b1de8828e78164538bf2860ea186d871487117b88be0a38c9b9b17986ae692"
+    },
+    "players-2025-to-2025-stats.csv": {
+      "rows": 556,
+      "columns": 271,
+      "blank_names": 1,
+      "sha256": "5d7b1e99ba4e4e8810d753f9b3294112aadfe47750c57858002b02a37bbf9fac"
+    },
+    "teams-2025-to-2025-stats.csv": {
+      "rows": 52,
+      "columns": 66,
+      "blank_names": 0,
+      "sha256": "d6b1de8828e78164538bf2860ea186d871487117b88be0a38c9b9b17986ae692"
+    }
+  },
+  "tables": {
+    "dim_date": {
+      "rows": 19,
+      "columns": 13,
+      "duplicate_primary_keys": 0
+    },
+    "dim_player": {
+      "rows": 555,
+      "columns": 7,
+      "duplicate_primary_keys": 0
+    },
+    "dim_stadium": {
+      "rows": 8,
+      "columns": 6,
+      "duplicate_primary_keys": 0
+    },
+    "dim_team": {
+      "rows": 24,
+      "columns": 6,
+      "duplicate_primary_keys": 0
+    },
+    "fact_league_stats": {
+      "rows": 1,
+      "columns": 72,
+      "duplicate_primary_keys": 0
+    },
+    "fact_matches": {
+      "rows": 52,
+      "columns": 26,
+      "duplicate_primary_keys": 0
+    },
+    "fact_player_stats": {
+      "rows": 555,
+      "columns": 15,
+      "duplicate_primary_keys": 0
+    }
+  },
+  "foreign_keys": [
+    {
+      "table": "dim_player",
+      "column": "team_id",
+      "target": "dim_team",
+      "orphans": 0,
+      "nulls": 0
+    },
+    {
+      "table": "fact_matches",
+      "column": "date_id",
+      "target": "dim_date",
+      "orphans": 0,
+      "nulls": 0
+    },
+    {
+      "table": "fact_matches",
+      "column": "home_team_id",
+      "target": "dim_team",
+      "orphans": 0,
+      "nulls": 0
+    },
+    {
+      "table": "fact_matches",
+      "column": "away_team_id",
+      "target": "dim_team",
+      "orphans": 0,
+      "nulls": 0
+    },
+    {
+      "table": "fact_matches",
+      "column": "stadium_id",
+      "target": "dim_stadium",
+      "orphans": 0,
+      "nulls": 9
+    },
+    {
+      "table": "fact_player_stats",
+      "column": "player_id",
+      "target": "dim_player",
+      "orphans": 0,
+      "nulls": 0
+    },
+    {
+      "table": "fact_player_stats",
+      "column": "team_id",
+      "target": "dim_team",
+      "orphans": 0,
+      "nulls": 73
+    },
+    {
+      "table": "fact_player_stats",
+      "column": "date_id",
+      "target": "dim_date",
+      "orphans": 0,
+      "nulls": 0
+    }
+  ],
+  "teams_duplicates_matches": true,
+  "checks": {
+    "match_goals": 121,
+    "match_goal_mismatches": 0,
+    "match_negative_attendance": 0,
+    "player_age_outside_15_45": 16,
+    "player_dates_distinct": 1,
+    "player_team_disagreements": 0,
+    "date_min": "2025-12-21",
+    "date_max": "2026-01-18",
+    "player_replacement_characters": 0
+  }
+}
