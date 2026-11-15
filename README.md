@@ -132,3 +132,8 @@ Le rapport cite notamment FootyStats et la CAF. Les CSV, SQL, PBIX et PDF sont c
 La présentation « Performance et Coût — Data Warehouses Cloud » relève d’un sujet distinct. Elle a été conservée dans les archives locales, hors de ce dépôt.
 
 Les scripts d’audit, l’installation SQL consolidée, la documentation de publication et l’extraction des captures ont été ajoutés lors de l’organisation du dépôt. Ils ne remplacent pas les jobs Talend du projet original.
+
+
+## Contributions
+
+Pour signaler un problème ou proposer une amélioration, consulter le [guide de contribution](CONTRIBUTING.md), qui détaille les vérifications propres à ce projet.
